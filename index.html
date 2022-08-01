@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <h1>Hello, world!</h1>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            浮動輸入框
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body w-100">
+                        <textarea class="w-100" name="" id="" cols="10" rows="10"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn btn-fixed-message btn-primary mb-2">
+            底部浮動輸入框
+        </div>
+
+        <div class="height-1920">測試高度</div>
+
+    </div>
+    <div class="fixed-message">
+        <div class="message">
+            <textarea class="w-100" name="" id="" cols="2" rows="5"></textarea>
+        </div>
+    </div>
+
+    <style>
+        .fixed-message {
+            bottom: -170px;
+            position: fixed;
+            width: 100%;
+            transition: .3s;
+        }
+        .fixed-message.active {
+            bottom: 0px;
+            transition: .3s;
+        }
+        .height-1920 {
+            height: 1920px;
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        let btn = document.querySelector('.btn-fixed-message')
+        let fixedMessage = document.querySelector('.fixed-message')
+        btn.addEventListener('click', () => fixedMessage.classList.toggle('active'))
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
